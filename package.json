@@ -1,0 +1,15 @@
+{
+  "name": "acclaim-badges-to-csv",
+  "version": "1.0.0",
+  "description": "A utility that calls into the JSON endpoint for set of Acclaim user's badges and builds up a CSV file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Hakanson",
+  "license": "MIT",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "node-fetch": "^2.6.1"
+  }
+}
