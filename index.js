@@ -1,4 +1,3 @@
-const path = require('path');
 const fetch = require('node-fetch');
 const createCsvWriter = require('csv-writer').createArrayCsvWriter;
 const csvWriter = createCsvWriter({
@@ -9,10 +8,6 @@ const csvWriter = createCsvWriter({
 let acclaimUsers = [
     "kevin-hakanson"
 ].sort();
-
-const users = {};
-const issuersSet  = new Set();
-const certLists = {};
 
 let records = [];
 
@@ -34,11 +29,7 @@ async function main() {
 
         const username = data.data[0].issued_to;
         console.log(username);
-        let user = users[username];
-        if (!user) {
-            user = users[username] = { "certs": [] };
-        }
-        data.data.forEach( (dataValue, dataIndex) => {
+        data.data.forEach( (dataValue) => {
             let cert = {
                 "username": username,
                 "issuer": dataValue.issuer.entities[0].entity.name,
@@ -51,10 +42,9 @@ async function main() {
             records.push(certRecord);
         });
     })).catch(function (error) {
-        // if there's an error, log it
         console.log(error);
     }).finally(() => {
-        csvWriter.writeRecords(records)       // returns a promise
+        csvWriter.writeRecords(records)
             .then(() => {
                 console.log('\ncertifications.csv');
             });     
