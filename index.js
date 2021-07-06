@@ -14,7 +14,7 @@ let records = [];
 async function main() {
     let urls = [];
     acclaimUsers.forEach( async (userValue) => {
-        let badgeURL = `https://www.youracclaim.com/users/${userValue}/badges.json`;
+        let badgeURL = `https://www.credly.com/users/${userValue}/badges.json`;
         urls.push(badgeURL);
     });
 
