@@ -5,7 +5,7 @@ const csvWriter = createCsvWriter({
     path: 'certifications.csv'
 });
 
-let acclaimUsers = [
+let credlyUsers = [
     "kevin-hakanson"
 ].sort();
 
@@ -13,7 +13,7 @@ let records = [];
 
 async function main() {
     let urls = [];
-    acclaimUsers.forEach( async (userValue) => {
+    credlyUsers.forEach( async (userValue) => {
         let badgeURL = `https://www.credly.com/users/${userValue}/badges.json`;
         urls.push(badgeURL);
     });
