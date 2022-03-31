@@ -1,4 +1,4 @@
-# Acclaim Badges to CSV
+# Credly Badges to CSV
 
 A utility that calls into the `.json` endpoint for a set of Credly user's badges and builds up a `.csv` file.
 
